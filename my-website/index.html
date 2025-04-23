@@ -75,8 +75,7 @@
     <p>&copy; 2025 Movee Flix TV. All rights reserved.</p>
     <div class="footer-links">
       <a href="#" onclick="openDisclaimerModal()">Disclaimer</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact Us</a>
+      <a href="#" onclick="openAboutUsModal()">About Us</a>
     </div>
   </div>
 </footer>
@@ -88,6 +87,18 @@
       <h2>Disclaimer</h2>
       <p style="margin-top: 10px;">
         Movee Flix TV does not host or upload any videos. All content is provided by non-affiliated third parties. We are not responsible for the legality or accuracy of the content streamed.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="modal" id="aboutus-modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeAboutUsModal()" style="color: red;">&times;</span>
+    <div class="modal-body" style="flex-direction: column;">
+      <h2>About Us</h2>
+      <p style="margin-top: 10px;">
+        Movee Flix TV is your ultimate destination for discovering the best trending movies, TV shows, and anime from around the web.
       </p>
     </div>
   </div>
@@ -113,6 +124,30 @@
   // Close when clicking outside the modal-content
   window.addEventListener('click', function(e) {
     if (e.target === disclaimerModal) {
+      closeDisclaimerModal();
+    }
+  });
+</script>
+
+  <script>
+  const aboutusModal = document.getElementById('aboutus-modal');
+
+  function openaboutusModal() {
+    aboutusModal.classList.add('show');
+  }
+
+  function closeaboutusModal() {
+    // Apply fade-out
+    aboutusModal.style.animation = 'fadeOut 0.3s ease forwards';
+    setTimeout(() => {
+      aboutusModal.classList.remove('show');
+      aboutusModal.style.animation = 'fadeIn 0.3s ease forwards'; // Reset
+    }, 300);
+  }
+
+  // Close when clicking outside the modal-content
+  window.addEventListener('click', function(e) {
+    if (e.target === aboutusModal) {
       closeDisclaimerModal();
     }
   });

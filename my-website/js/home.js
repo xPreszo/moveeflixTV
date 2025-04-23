@@ -120,4 +120,6 @@ const API_KEY = 'a2dc8b297ab3753eabd3d66413fa4db3';
       displayList(anime, 'anime-list');
     }
 
+
+
     init();

@@ -328,3 +328,21 @@
   /* Optional: */
   width: auto;
 }
+.site-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.main-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #ccc;
+  margin-top: -10px;
+  letter-spacing: 1px;
+}

@@ -71,14 +71,51 @@
 
 <footer class="footer">
   <div class="footer-content">
-    <p>&copy; 2025 My Website. All rights reserved.</p>
+    <p>&copy; 2025 Movee Flix TV. All rights reserved.</p>
     <div class="footer-links">
-      <a href="#">Disclaimer</a>
+      <a href="#" onclick="openDisclaimerModal()">Disclaimer</a>
       <a href="#">About Us</a>
       <a href="#">Contact Us</a>
     </div>
   </div>
 </footer>
 
+  <div class="modal" id="disclaimer-modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeDisclaimerModal()" style="color: red;">&times;</span>
+    <div class="modal-body" style="flex-direction: column;">
+      <h2>Disclaimer</h2>
+      <p style="margin-top: 10px;">
+        Movee Flix TV does not host or upload any videos. All content is provided by non-affiliated third parties. We are not responsible for the legality or accuracy of the content streamed.
+      </p>
+    </div>
+  </div>
+</div>
+
   
+  <script>
+  const disclaimerModal = document.getElementById('disclaimer-modal');
+
+  function openDisclaimerModal() {
+    disclaimerModal.classList.add('show');
+  }
+
+  function closeDisclaimerModal() {
+    // Apply fade-out
+    disclaimerModal.style.animation = 'fadeOut 0.3s ease forwards';
+    setTimeout(() => {
+      disclaimerModal.classList.remove('show');
+      disclaimerModal.style.animation = 'fadeIn 0.3s ease forwards'; // Reset
+    }, 300);
+  }
+
+  // Close when clicking outside the modal-content
+  window.addEventListener('click', function(e) {
+    if (e.target === disclaimerModal) {
+      closeDisclaimerModal();
+    }
+  });
+</script>
+
+
 </body>

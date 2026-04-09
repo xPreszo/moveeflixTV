@@ -185,4 +185,13 @@ body {
   .poster.large {
     width: 180px;
   }
+  #rows {
+  margin-top: 20px;
 }
+
+.hero {
+  background-size: cover;
+  background-position: center;
+}
+}
+

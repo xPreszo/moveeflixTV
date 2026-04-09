@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movee Flix TV</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="preload" href="css/home.css" as="style">
+  <link rel="preload" href="js/home.js" as="script">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script defer src="js/home.js"></script>
+  <script type='text/javascript' src='//pl26457333.profitableratecpm.com/90/8b/8d/908b8d19a188ccc8a906a44ae5fcb34a.js'></script>
+
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="site-header">
+  <h1 class="main-title">MOVEE FLIX</h1>
+  <p class="subtitle">STREAMING ANONYMOUSLY</p>
+</div>
+
+    <img src="logo.png" alt="LOGO HERE" class="site-logo" />
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
+    </div>
+  </div>
+
+  <div class="banner" id="banner">
+    <h1 id="banner-title"></h1>
+  </div>
+
+  <div class="row">
+    <h2>Top Movies This Week🔥</h2>
+    <div class="list" id="movies-list"></div>
+  </div>
+
+  <div class="row">
+    <h2>Trending TV Shows📺</h2>
+    <div class="list" id="tvshows-list"></div>
+  </div>
+  
+  <div class="row">
+    <h2>Popular Anime🤩</h2>
+    <div class="list" id="anime-list"></div>
+  </div>
+  
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()" style="color: red;">&times;</span>
+      <div class="modal-body">
+  <img id="modal-image" src="" alt="" />
+  <div class="modal-text">
+    <h2 id="modal-title"></h2>
+    <div class="stars" id="modal-rating"></div>
+    <p id="modal-description"></p>
+  </div>
+</div>
+      
+      <div class="server-selector">
+        <label for="server">Change Server:</label>
+        <select id="server" onchange="changeServer()">
+          <option value="vidsrc.cc">Vidsrc.cc</option>
+          <option value="vidsrc.me">Vidsrc.me</option>
+          <option value="player.videasy.net">Player.Videasy.net</option>
+        </select>
+      </div>
+      <iframe id="modal-video" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="search-modal" id="search-modal">
+    <span class="close" onclick="closeSearchModal()" style="color: red;">&times;</span>
+    <input type="text" id="search-input" placeholder="Search for a movie or show..." oninput="searchTMDB()" />
+    <div class="results" id="search-results"></div>
+  </div>
+
+  <script async="async" data-cfasync="false" src="//pl26458639.profitableratecpm.com/1c25b1157dcfaac0939c65b7cc09ad3c/invoke.js">
+  </script>
+<div id="container-1c25b1157dcfaac0939c65b7cc09ad3c">
+  
+</div>
+  
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Movee Flix TV. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#" onclick="openDisclaimerModal()">Disclaimer</a>
+      <a href="#" onclick="openAboutUsModal()">About Us</a>
+    </div>
+  </div>
+</footer>
+
+  <div class="modal" id="disclaimer-modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeDisclaimerModal()" style="color: red;">&times;</span>
+    <div class="modal-body" style="flex-direction: column;">
+      <h2>Disclaimer</h2>
+      <p style="margin-top: 10px;">
+        Movee Flix TV does not host or upload any videos. All content is provided by non-affiliated third parties. We are not responsible for the legality or accuracy of the content streamed.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="modal" id="aboutus-modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeAboutUsModal()" style="color: red;">&times;</span>
+    <div class="modal-body" style="flex-direction: column;">
+      <h2>About Us</h2>
+      <p style="margin-top: 10px;">
+        Movee Flix TV is your ultimate destination for discovering the best trending movies, TV shows, and anime from around the web.
+      </p>
+    </div>
+  </div>
+</div>
+
+  
+  <script>
+  const disclaimerModal = document.getElementById('disclaimer-modal');
+
+  function openDisclaimerModal() {
+    disclaimerModal.classList.add('show');
+  }
+
+  function closeDisclaimerModal() {
+    // Apply fade-out
+    disclaimerModal.style.animation = 'fadeOut 0.3s ease forwards';
+    setTimeout(() => {
+      disclaimerModal.classList.remove('show');
+      disclaimerModal.style.animation = 'fadeIn 0.3s ease forwards'; // Reset
+    }, 300);
+  }
+
+  // Close when clicking outside the modal-content
+  window.addEventListener('click', function(e) {
+    if (e.target === disclaimerModal) {
+      closeDisclaimerModal();
+    }
+  });
+</script>
+
+  <script>
+  const aboutusModal = document.getElementById('aboutus-modal');
+
+  function openaboutusModal() {
+    aboutusModal.classList.add('show');
+  }
+
+  function closeaboutusModal() {
+    // Apply fade-out
+    aboutusModal.style.animation = 'fadeOut 0.3s ease forwards';
+    setTimeout(() => {
+      aboutusModal.classList.remove('show');
+      aboutusModal.style.animation = 'fadeIn 0.3s ease forwards'; // Reset
+    }, 300);
+  }
+
+  // Close when clicking outside the modal-content
+  window.addEventListener('click', function(e) {
+    if (e.target === aboutusModal) {
+      closeaboutusModal();
+    }
+  });
+</script>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'fb9ad2924db54cb516e739d9a72ef21e',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/fb9ad2924db54cb516e739d9a72ef21e/invoke.js"></script>
+  
+<script type='text/javascript' src='//pl26464915.profitableratecpm.com/2f/b9/6f/2fb96f97b4c71bc47144955a7be34c67.js'></script>
+
+</body>

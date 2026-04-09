@@ -1,181 +1,142 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Movee Flix TV</title>
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="preload" href="css/home.css" as="style">
-  <link rel="preload" href="js/home.js" as="script">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script defer src="js/home.js"></script>
-  <script type='text/javascript' src='//pl26457333.profitableratecpm.com/90/8b/8d/908b8d19a188ccc8a906a44ae5fcb34a.js'></script>
-
+  <meta charset="UTF-8">
+  <title>MyFlix</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <div class="navbar">
-    <div class="site-header">
-  <h1 class="main-title">MOVEE FLIX</h1>
-  <p class="subtitle">STREAMING ANONYMOUSLY</p>
+<!-- HEADER -->
+<div class="site-header">
+  <img src="logo.png" class="site-logo">
+  <div class="main-title">MYFLIX</div>
+  <div class="subtitle">Unlimited movies, shows, and more</div>
 </div>
 
-    <img src="logo.png" alt="LOGO HERE" class="site-logo" />
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
-    </div>
-  </div>
-
-  <div class="banner" id="banner">
-    <h1 id="banner-title"></h1>
-  </div>
-
-  <div class="row">
-    <h2>Top Movies This Week🔥</h2>
-    <div class="list" id="movies-list"></div>
-  </div>
-
-  <div class="row">
-    <h2>Trending TV Shows📺</h2>
-    <div class="list" id="tvshows-list"></div>
-  </div>
-  
-  <div class="row">
-    <h2>Popular Anime🤩</h2>
-    <div class="list" id="anime-list"></div>
-  </div>
-  
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()" style="color: red;">&times;</span>
-      <div class="modal-body">
-  <img id="modal-image" src="" alt="" />
-  <div class="modal-text">
-    <h2 id="modal-title"></h2>
-    <div class="stars" id="modal-rating"></div>
-    <p id="modal-description"></p>
+<!-- NAVBAR -->
+<div class="navbar">
+  <img src="logo.png">
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Movies</a>
+    <a href="#">Series</a>
+    <input type="text" class="search-bar" placeholder="Search..." onclick="openSearch()">
   </div>
 </div>
-      
-      <div class="server-selector">
-        <label for="server">Change Server:</label>
-        <select id="server" onchange="changeServer()">
-          <option value="vidsrc.cc">Vidsrc.cc</option>
-          <option value="vidsrc.me">Vidsrc.me</option>
-          <option value="player.videasy.net">Player.Videasy.net</option>
-        </select>
+
+<!-- BANNER -->
+<div class="banner" style="background-image: url('banner.jpg');">
+  <h1>Featured Movie Title</h1>
+</div>
+
+<!-- MOVIE ROW -->
+<div class="row">
+  <h2>Trending Now</h2>
+  <div class="list">
+    <img src="movie1.jpg" onclick="openModal('Movie 1')">
+    <img src="movie2.jpg" onclick="openModal('Movie 2')">
+    <img src="movie3.jpg" onclick="openModal('Movie 3')">
+    <img src="movie4.jpg" onclick="openModal('Movie 4')">
+  </div>
+</div>
+
+<div class="row">
+  <h2>Popular</h2>
+  <div class="list">
+    <img src="movie5.jpg" onclick="openModal('Movie 5')">
+    <img src="movie6.jpg" onclick="openModal('Movie 6')">
+    <img src="movie7.jpg" onclick="openModal('Movie 7')">
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <div class="modal-body">
+      <img src="movie1.jpg" id="modal-img">
+      <div class="modal-text">
+        <h2 id="modal-title">Title</h2>
+        <p>Movie description goes here. This is a Netflix-style preview.</p>
+        <div class="stars">★★★★★</div>
       </div>
-      <iframe id="modal-video" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
     </div>
-  </div>
 
-  <div class="search-modal" id="search-modal">
-    <span class="close" onclick="closeSearchModal()" style="color: red;">&times;</span>
-    <input type="text" id="search-input" placeholder="Search for a movie or show..." oninput="searchTMDB()" />
-    <div class="results" id="search-results"></div>
-  </div>
+    <div class="server-selector">
+      <label>Select Server:</label>
+      <select>
+        <option>Server 1</option>
+        <option>Server 2</option>
+      </select>
+    </div>
 
-  <script async="async" data-cfasync="false" src="//pl26458639.profitableratecpm.com/1c25b1157dcfaac0939c65b7cc09ad3c/invoke.js">
-  </script>
-<div id="container-1c25b1157dcfaac0939c65b7cc09ad3c">
-  
+  </div>
 </div>
-  
-<footer class="footer">
+
+<!-- SEARCH MODAL -->
+<div class="search-modal" id="searchModal">
+  <span class="close" onclick="closeSearch()">&times;</span>
+  <input type="text" placeholder="Search movies...">
+
+  <div class="results">
+    <img src="movie1.jpg">
+    <img src="movie2.jpg">
+    <img src="movie3.jpg">
+  </div>
+</div>
+
+<!-- DISCLAIMER MODAL -->
+<div id="disclaimer-modal">
+  <div class="modal-content">
+    <h2>Disclaimer</h2>
+    <p>This site is for educational purposes only.</p>
+    <button onclick="closeDisclaimer()">Accept</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
   <div class="footer-content">
-    <p>&copy; 2025 Movee Flix TV. All rights reserved.</p>
+    <p>© 2026 MyFlix</p>
     <div class="footer-links">
-      <a href="#" onclick="openDisclaimerModal()">Disclaimer</a>
-      <a href="#" onclick="openAboutUsModal()">About Us</a>
-    </div>
-  </div>
-</footer>
-
-  <div class="modal" id="disclaimer-modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeDisclaimerModal()" style="color: red;">&times;</span>
-    <div class="modal-body" style="flex-direction: column;">
-      <h2>Disclaimer</h2>
-      <p style="margin-top: 10px;">
-        Movee Flix TV does not host or upload any videos. All content is provided by non-affiliated third parties. We are not responsible for the legality or accuracy of the content streamed.
-      </p>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
     </div>
   </div>
 </div>
 
-  <div class="modal" id="aboutus-modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeAboutUsModal()" style="color: red;">&times;</span>
-    <div class="modal-body" style="flex-direction: column;">
-      <h2>About Us</h2>
-      <p style="margin-top: 10px;">
-        Movee Flix TV is your ultimate destination for discovering the best trending movies, TV shows, and anime from around the web.
-      </p>
-    </div>
-  </div>
-</div>
+<!-- JAVASCRIPT -->
+<script>
+function openModal(title) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modal-title").innerText = title;
+}
 
-  
-  <script>
-  const disclaimerModal = document.getElementById('disclaimer-modal');
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
 
-  function openDisclaimerModal() {
-    disclaimerModal.classList.add('show');
-  }
+function openSearch() {
+  document.getElementById("searchModal").style.display = "flex";
+}
 
-  function closeDisclaimerModal() {
-    // Apply fade-out
-    disclaimerModal.style.animation = 'fadeOut 0.3s ease forwards';
-    setTimeout(() => {
-      disclaimerModal.classList.remove('show');
-      disclaimerModal.style.animation = 'fadeIn 0.3s ease forwards'; // Reset
-    }, 300);
-  }
+function closeSearch() {
+  document.getElementById("searchModal").style.display = "none";
+}
 
-  // Close when clicking outside the modal-content
-  window.addEventListener('click', function(e) {
-    if (e.target === disclaimerModal) {
-      closeDisclaimerModal();
-    }
-  });
+function closeDisclaimer() {
+  document.getElementById("disclaimer-modal").style.display = "none";
+}
+
+// Show disclaimer on load
+window.onload = () => {
+  document.getElementById("disclaimer-modal").classList.add("show");
+};
 </script>
-
-  <script>
-  const aboutusModal = document.getElementById('aboutus-modal');
-
-  function openaboutusModal() {
-    aboutusModal.classList.add('show');
-  }
-
-  function closeaboutusModal() {
-    // Apply fade-out
-    aboutusModal.style.animation = 'fadeOut 0.3s ease forwards';
-    setTimeout(() => {
-      aboutusModal.classList.remove('show');
-      aboutusModal.style.animation = 'fadeIn 0.3s ease forwards'; // Reset
-    }, 300);
-  }
-
-  // Close when clicking outside the modal-content
-  window.addEventListener('click', function(e) {
-    if (e.target === aboutusModal) {
-      closeaboutusModal();
-    }
-  });
-</script>
-<script type="text/javascript">
-	atOptions = {
-		'key' : 'fb9ad2924db54cb516e739d9a72ef21e',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/fb9ad2924db54cb516e739d9a72ef21e/invoke.js"></script>
-  
-<script type='text/javascript' src='//pl26464915.profitableratecpm.com/2f/b9/6f/2fb96f97b4c71bc47144955a7be34c67.js'></script>
 
 </body>
+</html>

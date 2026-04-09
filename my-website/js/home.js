@@ -159,6 +159,9 @@ async function init() {
   createRow("Trending Movies", movies);
   createRow("Popular TV Shows", tv);
   createRow("Anime Picks", anime);
+  createRow("Top Rated", await fetchData(...));
+createRow("Action Movies", await fetchData(...));
 }
+
 
 init();
